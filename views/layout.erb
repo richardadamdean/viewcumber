@@ -1,0 +1,18 @@
+<html>
+  <title>View-Cumber</title>
+  <head></head>
+
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'base' %>
+
+  <body>
+    
+    <div class="left">
+      <%= erb :left_nav %>
+    </div>
+    <div class="right">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

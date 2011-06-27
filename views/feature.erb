@@ -1,0 +1,24 @@
+
+
+<h2><%= @feature['name'] %></h2>
+<h3><%= @feature['description'] %></h3>
+
+<ul>
+<% @feature['elements'].each do |scenario| %>
+ <li>
+  Scenario:
+  <%= "#{scenario['name']} #{scenario['description']}" %>
+ </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+<% end %>
+</ul>
+
+
+
+
+
+<br/><br/>
+=====================RAW=========================
+<br/><br/>
+
+<%= @feature %>
