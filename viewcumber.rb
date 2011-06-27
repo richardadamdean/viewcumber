@@ -27,9 +27,10 @@ get '/' do
   erb :home
 end
 
-get '/feature' do
-  @feature = GherkinSupport.feature(File.join(project_path, 'features', params[:file]))
-  puts @feature
+get '/features/*' do
+  file_path = File.join(project_path, 'features', params['splat'])
+  @file = File.read file_path
+  @feature = GherkinSupport.feature file_path
   erb :feature
 end
 
@@ -55,7 +56,7 @@ end
 
 def menu_item(file_name, path)
   if file_name.match /.feature$/
-    link_to file_name, 'feature?file='+path
+    link_to file_name, "features#{path}"
   else
     content_tag :div, file_name
   end
