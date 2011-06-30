@@ -1,0 +1,9 @@
+%html
+  %head
+    %title Hulk!
+  %body
+    %div{:id => "body"}
+    - ['jquery', 'sammy', 'sammy.template'].each do |js|
+      %script{:src => "/javascripts/#{js}.js", :type => 'text/javascript', :charset => 'utf-8'}
+    %script{:type => "text/javascript", :src  => "/javascript.js"}
+    

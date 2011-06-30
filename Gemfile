@@ -1,9 +1,16 @@
-source 'http://rubygems.org'
-gem 'sinatra'
-gem 'gherkin'
-gem 'shotgun'
-gem 'ratpack'
+source :gemcutter
 
-#group :test do
-#  gem "rspec", "~> 2.6.0"
-#end
+gem "sinatra"
+gem "unicorn"
+gem "json"
+gem "gherkin"
+gem "haml"
+gem "coffee-script"
+
+group :test do
+  gem "cucumber-sinatra"
+  gem "cucumber"
+  gem "capybara"
+  gem "rspec"
+  gem "launchy"
+end
